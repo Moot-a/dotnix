@@ -308,6 +308,7 @@
 		wine
 		bat
 		go		
+		rustup
 	];
 
     programs.mtr.enable = true;
