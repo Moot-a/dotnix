@@ -317,6 +317,7 @@
 		bat
 		go		
 		rustup
+		ghostty
 	];
 
     programs.mtr.enable = true;
