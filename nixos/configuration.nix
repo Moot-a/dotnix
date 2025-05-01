@@ -100,19 +100,27 @@
     services.gvfs.enable = true;
     services.tumbler.enable = true;
     # Hyprland
-    #programs.hyprland = {
-    #    enable = true;
-    #    xwayland.enable = true;
-    #};
-    ## XDG Portals
-    xdg.portal = {
-    enable = true;
-    extraPortals = [ 
-	    pkgs.kdePackages.xdg-desktop-portal-kde
-	];
-	config.common.default = "*";
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
     };
-    services.dbus.enable = true;
+
+		services.hypridle.enable = true;
+
+		programs.hyprlock.enable = true;
+    
+		## XDG Portals
+    xdg.portal = {
+				enable = true;
+				extraPortals = [ 
+					pkgs.kdePackages.xdg-desktop-portal-kde
+			];
+			
+			config.common.default = "*";
+    
+		};
+
+		services.dbus.enable = true;
 
 # Printing.
     services.avahi = {
