@@ -49,7 +49,7 @@ in
     };
 
     #! EDIT THIS USER (must match users defined below)
-    users."hydenix" =
+    users."moota" = 
       { ... }:
       {
         imports = [
@@ -66,9 +66,9 @@ in
     enable = true; # Enable the Hydenix module
 
     #! EDIT THESE VALUES
-    hostname = "hydenix"; # Change to your preferred hostname
-    timezone = "America/Vancouver"; # Change to your timezone
-    locale = "en_CA.UTF-8"; # Change to your preferred locale
+    hostname = "moota"; # Change to your preferred hostname
+    timezone = "Switzerland/Zurich"; # Change to your timezone
+    locale = "ch_FR.UTF-8"; # Change to your preferred locale
 
     /*
       Optionally edit the below values, or leave to use hydenix defaults
@@ -95,14 +95,13 @@ in
   };
 
   #! EDIT THESE VALUES (must match users defined above)
-  users.users.hydenix = {
+  users.users.moota = {
     isNormalUser = true; # Regular user account
-    initialPassword = "hydenix"; # Default password (CHANGE THIS after first login with passwd)
+    initialPassword = "password"; # Set a password for the user
     extraGroups = [
-      "wheel" # For sudo access
-      "networkmanager" # For network management
-      "video" # For display/graphics access
-      # Add other groups as needed
+      "wheel"
+      "networkmanager"
+      "video"
     ];
     shell = pkgs.zsh; # Change if you prefer a different shell
   };
