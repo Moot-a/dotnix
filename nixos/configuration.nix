@@ -8,7 +8,6 @@
 }:
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -22,8 +21,6 @@
   # Networking
   networking.hostName = "moota";
   networking.networkmanager.enable = true;
-  #networkmanager-openvpn
-  #networkmanager-openconnect
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -33,7 +30,6 @@
   # Time zone. (Recheck for windows dual boot compatibility win >/< linux)
   time.timeZone = "Europe/Zurich";
 
-  # Select internationalisation properties.
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
     "fr_CH.UTF-8/UTF-8"
@@ -50,13 +46,14 @@
     LC_TIME = "fr_CH.UTF-8";
   };
 
-  # Keyboard
   services.xserver.xkb = {
     layout = "ch";
     variant = "fr";
   };
+
   environment.variables.LC_PAPER = "fr_CH.UTF-8";
-  fileSystems = {
+  
+	fileSystems = {
     "/win11" = {
       device = "/dev/disk/by-uuid/48487719487704CA";
       fsType = "ntfs3";
@@ -95,7 +92,7 @@
     };
   };
 
-  console.keyMap = "sg"; # ?
+  console.keyMap = "sg";
 
   # NixOS settings
   nix.settings.experimental-features = [
@@ -111,10 +108,6 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  programs.kdeconnect.enable = true;
-  programs.thunar.enable = true;
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
   # Hyprland
   programs.hyprland = {
     enable = true;
@@ -213,6 +206,10 @@
 
   programs.neovim.defaultEditor = true;
   programs.neovim.enable = true;
+
+  programs.kdeconnect.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 
   # Packages
   nixpkgs.config.allowUnfree = true;
