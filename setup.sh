@@ -4,3 +4,4 @@ sudo ln -s /home/moota/dotnix/nixos /etc/nixos # <- Change moota with your usena
 ln -s /home/moota/dotnix/home ~/.config/home-manager
 # Remove folder before symlinking
 ln -s /home/moota/dotnix/hypr ~/.config/hypr
+ln -s /home/moota/dotnix/kitty ~/.config/kitty
