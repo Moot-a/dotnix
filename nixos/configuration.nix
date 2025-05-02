@@ -318,6 +318,10 @@
 		go		
 		rustup
 		ghostty
+		wofi
+		waybar
+		font-awesome
+		heroic
 	];
 
     programs.mtr.enable = true;
