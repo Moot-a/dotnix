@@ -277,17 +277,13 @@
     home-manager
     kitty
     vscode-fhs
-    floorp
     discord
-    vesktop
     htop
     ntfs3g
     tree
     git
     gnumake
-    #libgcc
-    #gdb
-    #clang
+    clang
     vlc
     youtube-music
     inkscape
@@ -297,15 +293,10 @@
     protonup
     protonup-qt
     gnutls # MC Dungeons
-    bitwarden-desktop
     kdePackages.xwaylandvideobridge
-    spacedrive
-    freetube
     textsnatcher
-    suwayomi-server
     obsidian
     qbittorrent
-    pinta
     gdu
     miru
     duc
@@ -323,7 +314,6 @@
     lua-language-server
     python312Packages.setuptools
     kdePackages.filelight
-    pianobooster
     pdfarranger
     ventoy
     yt-dlp
@@ -331,7 +321,6 @@
     joplin-desktop
     kdePackages.kate
     kdePackages.yakuake
-    squirreldisk
     jq
     wine
     bat
@@ -341,7 +330,6 @@
     wofi
     waybar
     font-awesome
-    heroic
     nixfmt-rfc-style
   ];
 
