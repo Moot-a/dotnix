@@ -1,5 +1,3 @@
-# nix-store --optimise -vv
-# sudo nix-collect-garbage -d
 {
   config,
   lib,
@@ -331,6 +329,13 @@
     waybar
     font-awesome
     nixfmt-rfc-style
+    hyprshot
+    hyprpaper
+    swaynotificationcenter
+    loupe
+    starship
+    hyprpicker
+    stow
   ];
 
   programs.mtr.enable = true;
