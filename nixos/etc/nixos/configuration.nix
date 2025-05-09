@@ -19,6 +19,7 @@
   # Networking
   networking.hostName = "moota";
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -271,6 +272,9 @@
       	'';
   };
 
+  boot.kernelModules = [ "binder_linux" "ashmem_linux" ];
+  virtualisation.waydroid.enable = true;
+
   environment.systemPackages = with pkgs; [
     home-manager
     kitty
@@ -337,6 +341,7 @@
     hyprpicker
     stow
     pavucontrol
+    waydroid
   ];
 
   programs.mtr.enable = true;
