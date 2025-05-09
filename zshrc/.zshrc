@@ -43,3 +43,5 @@ source /path/to/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /path/to/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+eval "$(starship init zsh)"
