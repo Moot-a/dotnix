@@ -336,6 +336,7 @@
     starship
     hyprpicker
     stow
+    pavucontrol
   ];
 
   programs.mtr.enable = true;
