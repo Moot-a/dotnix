@@ -1,2 +1,0 @@
-stow hypr
-stow kitty
