@@ -5,3 +5,10 @@ nixos-rebuild switch --flake ~/dotnix#moota
 ```bash
 home-manager switch --flake ~/dotnix#moota
 ```
+
+# Steam games commands
+```
+gamemoderun %command%
+mangohud %command%
+gamescope %command%
+```
