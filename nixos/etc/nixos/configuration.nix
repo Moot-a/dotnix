@@ -51,8 +51,8 @@
   };
 
   environment.variables.LC_PAPER = "fr_CH.UTF-8";
-  
-	fileSystems = {
+
+  fileSystems = {
     "/win11" = {
       device = "/dev/disk/by-uuid/48487719487704CA";
       fsType = "ntfs3";
@@ -89,6 +89,19 @@
         "umask=0000"
       ];
     };
+
+    "/DataBig" = {
+      device = "/dev/disk/by-uuid/08D4337FD4336E56";
+      fsType = "ntfs3";
+      options = [
+        "uid=1000"
+        "gid=1000"
+        "windows_names"
+        "exec"
+        "nofail"
+        "umask=0000"
+      ];
+    };
   };
 
   console.keyMap = "sg";
@@ -102,7 +115,6 @@
 
   # Windowing
   services.xserver.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -111,6 +123,11 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    #WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   services.hypridle.enable = true;
@@ -145,6 +162,7 @@
   };
 
   # Enable sound.
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -272,8 +290,14 @@
       	'';
   };
 
-  boot.kernelModules = [ "binder_linux" "ashmem_linux" ];
+  boot.kernelModules = [
+    "binder_linux"
+    "ashmem_linux"
+  ];
   virtualisation.waydroid.enable = true;
+  boot.extraModprobeConfig = ''
+    options binder_linux devices=binder,hwbinder,vndbinder
+  '';
 
   environment.systemPackages = with pkgs; [
     home-manager
@@ -335,13 +359,25 @@
     nixfmt-rfc-style
     hyprshot
     hyprpaper
-    swaynotificationcenter
+    mako
+    libnotify
     loupe
     starship
     hyprpicker
     stow
     pavucontrol
     waydroid
+    fuzzel
+    networkmanagerapplet
+    bibata-cursors
+    bitwarden
+    vesktop
+    brave
+    kdePackages.polkit-kde-agent-1
+    (gimp-with-plugins.override {
+      plugins = [ gimpPlugins.resynthesizer ];
+    })
+    loupe
   ];
 
   programs.mtr.enable = true;
