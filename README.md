@@ -12,3 +12,5 @@ gamemoderun %command%
 mangohud %command%
 gamescope %command%
 ```
+
+# Use with GNU stow
