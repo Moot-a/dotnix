@@ -7,6 +7,7 @@ setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS APPEND_HISTORY \
 
 # === Oh My Zsh bootstrap ===
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$ZSH/custom"
 ZSH_THEME="robbyrussell"        # ← comment out if you stick with starship
 
 # Plugins managed by OMZ (cloned into $ZSH_CUSTOM/plugins/)
@@ -46,5 +47,4 @@ if command -v zoxide >/dev/null; then
 fi
 
 # === Starship prompt ===
-# Comment this out if you prefer the robbyrussell OMZ theme
 eval "$(starship init zsh)"
