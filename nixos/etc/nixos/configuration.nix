@@ -232,8 +232,9 @@
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
 
-  programs.zsh = enable = true;
-  
+  programs.zsh.enable = true;
+  programs.zsh.ohMyZsh.enable = true;
+
   boot.kernelModules = [
     "binder_linux"
     "ashmem_linux"
