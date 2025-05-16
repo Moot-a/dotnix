@@ -232,64 +232,8 @@
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    autosuggestions.enable = true;
-    autosuggestions.strategy = [
-      "history"
-      "completion"
-    ];
-    autosuggestions.highlightStyle = "fg=8";
-
-    ohMyZsh = {
-      enable = true;
-      theme = "robbyrussell"; # ← Your prompt will be pure Oh My Zsh now
-      plugins = [
-        "git"
-        "common-aliases"
-        "sudo"
-      ];
-    };
-
-    shellAliases = {
-      ls = "ls --color=auto";
-      ll = "ls -lh";
-      la = "ls -lha";
-      gs = "git status";
-      gd = "git diff";
-      gl = "git pull";
-      gp = "git push";
-    };
-
-    setOptions = [
-      "HIST_IGNORE_ALL_DUPS"
-      "HIST_REDUCE_BLANKS"
-      "APPEND_HISTORY"
-      "INC_APPEND_HISTORY"
-      "SHARE_HISTORY"
-      "EXTENDED_HISTORY"
-      "CORRECT"
-    ];
-
-    histSize = 100000;
-    histFile = "~/.zsh_history";
-
-    interactiveShellInit = ''
-      		# Bind better search on up/down
-      		autoload -Uz up-line-or-beginning-search
-      		autoload -Uz down-line-or-beginning-search
-      		zle -N up-line-or-beginning-search
-      		zle -N down-line-or-beginning-search
-      		bindkey "^[[A" up-line-or-beginning-search
-      		bindkey "^[[B" down-line-or-beginning-search
-
-      		# zoxide only (no starship anymore)
-      		eval "$(zoxide init zsh)"
-      	'';
-  };
-
+  programs.zsh = enable = true;
+  
   boot.kernelModules = [
     "binder_linux"
     "ashmem_linux"
