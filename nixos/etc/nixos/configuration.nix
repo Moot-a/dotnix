@@ -111,6 +111,7 @@
     "nix-command"
     "flakes"
   ];
+
   # Automatic updating
   system.autoUpgrade.enable = true;
   system.autoUpgrade.dates = "weekly";
@@ -121,7 +122,6 @@
   nix.gc.options = "--delete-older-than 10d";
   nix.settings.auto-optimise-store = true;
 
-  
   # Windowing
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -144,7 +144,6 @@
   };
 
   services.hypridle.enable = true;
-
   programs.hyprlock.enable = true;
 
   ## XDG Portals
@@ -214,8 +213,6 @@
   ];
 
   # Gaming
-  # hardware.graphics.enable = true;my_
-  # hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.graphics = {
     enable = true;
