@@ -116,8 +116,12 @@
   # Windowing
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
+  
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.setupCommands = ''
+    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-A-1 --rotate left
+  '';
 
   # Hyprland
   programs.hyprland = {
@@ -286,7 +290,6 @@
     python312Packages.setuptools
     kdePackages.filelight
     pdfarranger
-    ventoy
     yt-dlp
     kdePackages.qtmultimedia
     joplin-desktop
@@ -323,6 +326,7 @@
       plugins = [ gimpPlugins.resynthesizer ];
     })
     loupe
+    scrcpy
   ];
 
   programs.mtr.enable = true;
