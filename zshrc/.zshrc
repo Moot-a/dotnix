@@ -42,9 +42,7 @@ alias gl='git pull'
 alias gp='git push'
 
 # === zoxide ===
-if command -v zoxide >/dev/null; then
-  eval "$(zoxide init zsh)"
-fi
+eval "$(zoxide init zsh)"
 
 # === Starship prompt ===
 eval "$(starship init zsh)"

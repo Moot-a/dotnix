@@ -9,6 +9,10 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-qt5-1.1.05"
+  ];
+
   # Bootloader
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
@@ -245,6 +249,11 @@
   programs.zsh.enable = true;
   programs.zsh.ohMyZsh.enable = true;
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   boot.kernelModules = [
     "binder_linux"
     "ashmem_linux"
@@ -279,19 +288,18 @@
     obsidian
     qbittorrent
     gdu
-    miru
     duc
     fzf
     fd
     gparted
     wl-clipboard
-    zoxide
     ripgrep
     python313
     cups-browsed
     steamcmd
     ollama-rocm
     gcc
+    gdb
     lua-language-server
     python312Packages.setuptools
     kdePackages.filelight
@@ -334,6 +342,9 @@
     loupe
     scrcpy
     fastfetch
+    gitkraken
+    bluez
+    pywal
   ];
 
   programs.mtr.enable = true;
