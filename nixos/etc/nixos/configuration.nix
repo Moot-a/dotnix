@@ -125,7 +125,7 @@
   # Windowing
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.xserver.displayManager.setupCommands = ''
@@ -338,6 +338,8 @@
     gitkraken
     bluez
     pywal
+    suwayomi-server
+    miru
   ];
 
   programs.mtr.enable = true;
