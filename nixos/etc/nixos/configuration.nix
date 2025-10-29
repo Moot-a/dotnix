@@ -283,7 +283,6 @@
     protonup
     protonup-qt
     gnutls # MC Dungeons
-    kdePackages.xwaylandvideobridge
     textsnatcher
     obsidian
     qbittorrent
@@ -336,15 +335,13 @@
     vesktop
     brave
     kdePackages.polkit-kde-agent-1
-    (gimp-with-plugins.override {
-      plugins = [ gimpPlugins.resynthesizer ];
-    })
     loupe
     scrcpy
     fastfetch
     gitkraken
     bluez
     pywal
+    inputs.hyprlauncher.packages.${pkgs.system}.default
   ];
 
   programs.mtr.enable = true;
