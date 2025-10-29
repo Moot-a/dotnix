@@ -9,10 +9,6 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-qt5-1.1.05"
-  ];
-
   # Bootloader
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
@@ -153,8 +149,9 @@
   ## XDG Portals
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.kdePackages.xdg-desktop-portal-kde
+    extraPortals = with pkgs; [
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-hyprland
     ];
 
     config.common.default = "*";
@@ -341,7 +338,6 @@
     gitkraken
     bluez
     pywal
-    inputs.hyprlauncher.packages.${pkgs.system}.default
   ];
 
   programs.mtr.enable = true;
